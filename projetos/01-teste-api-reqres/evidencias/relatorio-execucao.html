@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Execução - Testes API ReqRes</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+  body { background:#0f1026; color:#f8fafc; padding:2rem 1rem; }
+  .wrap { max-width:1000px; margin:0 auto; }
+  h1 { font-size:1.6rem; margin-bottom:.4rem; }
+  .sub { color:#94a3b8; margin-bottom:1.6rem; font-size:.95rem; }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:1.6rem; }
+  .stat { background:#1f2237; border:1px solid #2a2e4f; border-radius:12px; padding:1rem 1.2rem; }
+  .stat span { display:block; font-size:1.8rem; font-weight:700; }
+  .stat small { color:#94a3b8; font-size:.85rem; }
+  .green { color:#4ade80; } .blue { color:#38bdf8; } .red { color:#f87171; }
+  table { width:100%; border-collapse:collapse; background:#1f2237; border-radius:12px; overflow:hidden; font-size:.92rem; }
+  th, td { padding:.75rem 1rem; text-align:left; border-bottom:1px solid #2a2e4f; }
+  th { background:#252846; color:#cbd5e1; font-weight:600; }
+  tr:last-child td { border-bottom:none; }
+  .badge { display:inline-block; padding:.2rem .6rem; border-radius:999px; font-size:.78rem; font-weight:700; }
+  .pass { background:rgba(74,222,128,.15); color:#4ade80; }
+  .fail { background:rgba(248,113,113,.15); color:#f87171; }
+  .code { font-family:Consolas,monospace; color:#38bdf8; }
+  footer { margin-top:1.6rem; color:#94a3b8; font-size:.85rem; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Relatório de Execução - Testes de API</h1>
+  <p class="sub">ReqRes API &middot; Executado em 18/10/2026 &middot; Ambiente: Produção</p>
+
+  <div class="cards">
+    <div class="stat"><span class="blue">7</span><small>Casos executados</small></div>
+    <div class="stat"><span class="green">7</span><small>Passaram</small></div>
+    <div class="stat"><span class="red">0</span><small>Falharam</small></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Caso de teste</th><th>Esperado</th><th>Obtido</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CT001</td><td>Listar usuários</td><td class="code">200</td><td class="code">200</td><td><span class="badge pass">Passou</span></td></tr>
+      <tr><td>CT002</td><td>Buscar usuário por ID</td><td class="code">200</td><td class="code">200</td><td><span class="badge pass">Passou</span></td></tr>
+      <tr><td>CT003</td><td>Buscar ID inexistente</td><td class="code">404</td><td class="code">404</td><td><span class="badge pass">Passou</span></td></tr>
+      <tr><td>CT004</td><td>Criar usuário</td><td class="code">201</td><td class="code">201</td><td><span class="badge pass">Passou</span></td></tr>
+      <tr><td>CT005</td><td>Atualizar usuário (PUT)</td><td class="code">200</td><td class="code">200</td><td><span class="badge pass">Passou</span></td></tr>
+      <tr><td>CT006</td><td>Atualizar usuário (PATCH)</td><td class="code">200</td><td class="code">200</td><td><span class="badge pass">Passou</span></td></tr>
+      <tr><td>CT007</td><td>Excluir usuário</td><td class="code">204</td><td class="code">204</td><td><span class="badge pass">Passou</span></td></tr>
+    </tbody>
+  </table>
+
+  <footer>Relatório dos testes de API - Helen Cristina</footer>
+</div>
+</body>
+</html>

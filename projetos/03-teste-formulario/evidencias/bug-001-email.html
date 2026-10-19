@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Evidência BUG-001 - Formulário</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+  body { background:#eef1f6; color:#1e293b; padding:1.5rem; }
+  .frame { max-width:640px; margin:0 auto; background:#fff; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.12); overflow:hidden; }
+  .browser { background:#f1f5f9; padding:.6rem 1rem; display:flex; align-items:center; gap:.5rem; border-bottom:1px solid #e2e8f0; }
+  .dot { width:11px; height:11px; border-radius:50%; }
+  .r{background:#ef4444}.y{background:#f59e0b}.g{background:#22c55e}
+  .url { margin-left:.6rem; background:#fff; border:1px solid #e2e8f0; border-radius:6px; padding:.25rem .7rem; font-size:.78rem; color:#64748b; }
+  .content { padding:1.4rem; }
+  .badge { display:inline-block; background:#dc2626; color:#fff; font-size:.72rem; font-weight:700; padding:.15rem .5rem; border-radius:4px; margin-bottom:.6rem; }
+  h2 { font-size:1.05rem; margin-bottom:1rem; }
+  label { display:block; font-size:.85rem; color:#475569; margin-bottom:.35rem; }
+  input { width:100%; padding:.6rem .8rem; border:1px solid #cbd5e1; border-radius:8px; font-size:.92rem; }
+  .ok { border-color:#22c55e; background:#f0fdf4; }
+  .btn { margin-top:1rem; background:#0ea5e9; color:#fff; border:none; padding:.6rem 1.2rem; border-radius:8px; font-weight:600; }
+  .note { background:#fef2f2; border-left:4px solid #dc2626; padding:.8rem 1rem; border-radius:6px; margin-top:1rem; font-size:.88rem; color:#7f1d1d; }
+  .success { color:#16a34a; font-weight:600; font-size:.85rem; margin-top:.3rem; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="browser">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="url">https://formulario-ficticio.exemplo.com/cadastro</span>
+    </div>
+    <div class="content">
+      <span class="badge">BUG-001</span>
+      <h2>Formulário de cadastro</h2>
+      <label>Nome</label>
+      <input class="ok" value="Helen Cristina">
+      <label style="margin-top:.9rem">E-mail</label>
+      <input class="ok" value="teste@">
+      <p class="success">Formulário enviado com sucesso (indevidamente aceito)</p>
+      <button class="btn">Enviar</button>
+      <div class="note">
+        <strong>Esperado:</strong> erro de validação pra e-mail sem domínio.<br>
+        <strong>Obtido:</strong> o formulário aceita <code>teste@</code> e envia.<br>
+        <strong>Passos:</strong> preencher o e-mail com <code>teste@</code> e clicar em Enviar.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
